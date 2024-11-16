@@ -1,3 +1,4 @@
+import Footer from "./components/footer";
 import Login from "./components/login";
 import Sidebar from "./components/sidebar";
 import SidebarGuest from "./components/sidebar-guest";
@@ -10,6 +11,7 @@ function App() {
       <Sidebar />
       <SidebarGuest />
       <SocialCard />
+      <Footer />
     </div>
   );
 }
