@@ -20,19 +20,19 @@ const EditProfile = () => {
   };
 
   return (
-    <div className="flex flex-col items-center p-6 bg-gray-50 min-h-screen">
+    <div className="flex flex-col items-center py-8 bg-white min-h-screen">
       {/* Title */}
       <h2 className="text-2xl font-bold text-gray-800 mb-6">Edit Profile</h2>
 
       {/* Profile Image */}
       <div className="relative">
         <img
-          src="https://via.placeholder.com/100"
+          src="https://via.placeholder.com/150"
           alt="Profile"
-          className="w-24 h-24 rounded-full object-cover"
+          className="w-36 h-36 rounded-full object-cover" // Increased size to 150x150
         />
-        <div className="absolute bottom-0 right-0 bg-white border border-gray-300 p-2 rounded-full cursor-pointer hover:bg-gray-100">
-          <Edit3 className="w-4 h-4 text-gray-600" />
+        <div className="absolute bottom-0 right-0 bg-white border border-main p-2 rounded-full cursor-pointer hover:bg-gray-100">
+          <Edit3 className="w-5 h-5 text-main" />
         </div>
       </div>
 
@@ -44,7 +44,7 @@ const EditProfile = () => {
       {/* Form */}
       <form
         onSubmit={handleSubmit}
-        className="w-full max-w-md mt-6 bg-white p-6 rounded-lg shadow"
+        className="w-full max-w-3xl mt-6 bg-white px-6 py-8 border-t-2 "
       >
         {/* First Name */}
         <div className="mb-4">
@@ -105,7 +105,7 @@ const EditProfile = () => {
         {/* Submit Button */}
         <button
           type="submit"
-          className="w-full bg-brown-600 text-white py-2 px-4 rounded-md hover:bg-brown-700 focus:ring focus:ring-brown-400"
+          className="w-full bg-main text-white py-2 px-4 rounded-md hover:bg-brown-700 focus:ring focus:ring-brown-400"
         >
           Update
         </button>

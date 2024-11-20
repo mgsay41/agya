@@ -26,7 +26,7 @@ const LatestActivities = () => {
   ];
 
   return (
-    <div className="w-72 rounded-lg border border-gray-200 bg-white shadow">
+    <div className="w-64 rounded-lg border border-gray-200 bg-white shadow">
       <div className="p-6">
         <h2 className="mb-4 text-xl font-semibold text-gray-900">
           Latest Activities

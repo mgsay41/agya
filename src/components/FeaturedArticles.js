@@ -21,11 +21,11 @@ const FeaturedArticles = () => {
 
   return (
     <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-8">
-      <h1 className="mb-12 text-center text-3xl sm:text-4xl lg:text-5xl font-bold text-black">
+      <h1 className="mb-12 text-center text-lg font-bold text-black">
         Featured Articles
       </h1>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2">
         {articles.map((article, index) => (
           <div
             key={index}
@@ -35,17 +35,15 @@ const FeaturedArticles = () => {
               <img
                 src={article.image}
                 alt={article.title}
-                className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
+                className="object-cover transition-transform duration-300 group-hover:scale-105"
               />
             </div>
 
-            <div className="p-6 flex-grow flex flex-col justify-between text-center">
-              <h2 className="mb-4 text-xl sm:text-2xl font-bold leading-tight text-gray-900">
+            <div className="pt-1 pb-4 px-4 flex-grow flex flex-col justify-between text-center">
+              <h2 className="mb-4 text-lg sm:text-sm font-bold leading-tight text-gray-900">
                 "{article.title}"
               </h2>
-              <p className="mt-auto text-gray-500 text-base sm:text-lg">
-                {article.author}
-              </p>
+              <p className="mt-auto text-gray-500 text-sm">{article.author}</p>
             </div>
           </div>
         ))}

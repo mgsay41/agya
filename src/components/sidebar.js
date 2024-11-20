@@ -12,9 +12,9 @@ import {
 
 const Sidebar = () => {
   return (
-    <div className="flex flex-col h-screen w-64 text-main-font rounded-lg shadow-lg">
+    <div className="flex flex-col h-screen w-64 text-main-font rounded-lg border border-gray-300 bg-white shadow">
       {/* Profile Section */}
-      <div className="flex flex-col items-center py-8 bg-background">
+      <div className="flex flex-col items-center py-8">
         {/* Profile Image */}
         <img
           src="https://via.placeholder.com/80" // Replace with the actual image URL
@@ -22,7 +22,11 @@ const Sidebar = () => {
           className="w-20 h-20 rounded-full mb-4"
         />
         {/* Name */}
-        <h2 className="text-lg font-semibold">Guest</h2>
+        <h2 className="text-lg font-semibold">Salma Nofal</h2>
+        {/* Description */}
+        <p className="text-sm text-gray-500 text-center px-4">
+          Ui/Ux Designer | Cs Graduate | Archaeology Enthusiast
+        </p>
       </div>
 
       {/* Navigation Links */}
@@ -86,17 +90,20 @@ const Sidebar = () => {
           </Link>
         </div>
 
-        {/* Login button */}
+        {/* Logout Button */}
         <Link
-          to="/login"
-          className="flex items-center justify-center text-sm font-medium w-32 mx-auto mt-12 bg-[#8B4513] text-white py-2 rounded-lg hover:bg-opacity-90"
+          to="/logout"
+          className="flex items-center text-sm font-medium hover:text-main w-40 mx-auto mt-12"
         >
-          Login
+          <span className="w-12 inline-flex justify-end">
+            <LogOut className="w-5 h-5" />
+          </span>
+          <span className="ml-4">Log out</span>
         </Link>
       </nav>
 
       {/* Footer Section */}
-      <div className="mt-auto px-4 py-6 text-xs text-gray-400 bg-background">
+      <div className="mt-auto px-4 py-6 text-xs text-gray-400">
         <div className="w-3/4 mx-auto border-t border-gray-200">
           <p className="text-center mt-4 mb-2">
             <a href="#" className="hover:text-main">
@@ -114,7 +121,7 @@ const Sidebar = () => {
           <p className="text-center">
             Designed and Developed by: <strong>ABS.AI</strong>
           </p>
-          <p className="text-center">All Rights Reserved ©2024 Agya.com</p>
+          <p className="text-center pb-4">All Rights Reserved ©2024 Agya.com</p>
         </div>
       </div>
     </div>
