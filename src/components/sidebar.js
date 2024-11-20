@@ -1,6 +1,14 @@
 import React from "react";
-// Importing required icons from Lucide React
-import { Home, Info, Calendar, Image, HelpCircle, LogOut } from "lucide-react";
+import { Link } from "react-router-dom"; // Import Link for navigation
+import {
+  Home,
+  Info,
+  Calendar,
+  Image,
+  HelpCircle,
+  LogOut,
+  User,
+} from "lucide-react";
 
 const Sidebar = () => {
   return (
@@ -14,73 +22,77 @@ const Sidebar = () => {
           className="w-20 h-20 rounded-full mb-4"
         />
         {/* Name */}
-        <h2 className="text-lg font-semibold">Salma Nofal</h2>
-        {/* Description */}
-        <p className="text-sm text-gray-500 text-center px-4">
-          Ui/Ux Designer | Cs Graduate | Archaeology Enthusiast
-        </p>
+        <h2 className="text-lg font-semibold">Guest</h2>
       </div>
 
       {/* Navigation Links */}
       <nav className="flex flex-col py-4 px-6">
         <div className="flex flex-col items-center space-y-6">
-          <a
-            href="#"
+          <Link
+            to="/"
             className="flex items-center text-sm font-medium hover:text-main w-40"
           >
             <span className="w-12 inline-flex justify-end">
               <Home className="w-5 h-5" />
             </span>
             <span className="ml-4">Home</span>
-          </a>
-          <a
-            href="#"
+          </Link>
+          <Link
+            to="/about"
             className="flex items-center text-sm font-medium hover:text-main w-40"
           >
             <span className="w-12 inline-flex justify-end">
               <Info className="w-5 h-5" />
             </span>
             <span className="ml-4">About</span>
-          </a>
-          <a
-            href="#"
+          </Link>
+          <Link
+            to="/activities"
             className="flex items-center text-sm font-medium hover:text-main w-40"
           >
             <span className="w-12 inline-flex justify-end">
               <Calendar className="w-5 h-5" />
             </span>
             <span className="ml-4">Activities</span>
-          </a>
-          <a
-            href="#"
+          </Link>
+          <Link
+            to="/gallery"
             className="flex items-center text-sm font-medium hover:text-main w-40"
           >
             <span className="w-12 inline-flex justify-end">
               <Image className="w-5 h-5" />
             </span>
             <span className="ml-4">Gallery</span>
-          </a>
-          <a
-            href="#"
+          </Link>
+          <Link
+            to="/help"
             className="flex items-center text-sm font-medium hover:text-main w-40"
           >
             <span className="w-12 inline-flex justify-end">
               <HelpCircle className="w-5 h-5" />
             </span>
             <span className="ml-4">Help</span>
-          </a>
+          </Link>
+
+          {/* Profile Button */}
+          <Link
+            to="/profile"
+            className="flex items-center text-sm font-medium hover:text-main w-40"
+          >
+            <span className="w-12 inline-flex justify-end">
+              <User className="w-5 h-5" />
+            </span>
+            <span className="ml-4">Profile</span>
+          </Link>
         </div>
 
-        {/* Logout button separated */}
-        <a
-          href="#"
-          className="flex items-center text-sm font-medium hover:text-main w-40 mx-auto mt-12"
+        {/* Login button */}
+        <Link
+          to="/login"
+          className="flex items-center justify-center text-sm font-medium w-32 mx-auto mt-12 bg-[#8B4513] text-white py-2 rounded-lg hover:bg-opacity-90"
         >
-          <span className="w-12 inline-flex justify-end">
-            <LogOut className="w-5 h-5" />
-          </span>
-          <span className="ml-4">Log out</span>
-        </a>
+          Login
+        </Link>
       </nav>
 
       {/* Footer Section */}

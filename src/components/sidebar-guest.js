@@ -1,5 +1,14 @@
 import React from "react";
-import { Home, Info, Calendar, Image, HelpCircle, LogOut } from "lucide-react";
+// Importing required icons from Lucide React
+import {
+  Home,
+  Info,
+  Calendar,
+  Image,
+  HelpCircle,
+  LogOut,
+  User,
+} from "lucide-react"; // Added 'User' for Profile
 
 const Sidebar = () => {
   return (
@@ -63,6 +72,17 @@ const Sidebar = () => {
               <HelpCircle className="w-5 h-5" />
             </span>
             <span className="ml-4">Help</span>
+          </a>
+
+          {/* New Profile Button */}
+          <a
+            href="#"
+            className="flex items-center text-sm font-medium hover:text-main w-40"
+          >
+            <span className="w-12 inline-flex justify-end">
+              <User className="w-5 h-5" />
+            </span>
+            <span className="ml-4">Profile</span>
           </a>
         </div>
 
