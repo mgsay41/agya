@@ -3,6 +3,7 @@ import Front from "./pages/Front";
 import UserProfile from "./pages/UserProfile";
 import ChangePhotoComponent from "./components/ChangePhotoComponent";
 import CommentSection from "./components/CommentSection";
+import EditProfile from "./pages/EditProfile";
 
 const App = () => {
   return (
@@ -11,6 +12,7 @@ const App = () => {
       <UserProfile />
       <ChangePhotoComponent />
       <CommentSection />
+      <EditProfile />
     </div>
   );
 };

@@ -54,7 +54,7 @@ const CommentSection = () => {
 
   return (
     <div className="w-full flex justify-center py-4 pl-4 pr-4 bg-white rounded-2xl ">
-      <div className="w-full bg-[#fefdfc] shadow-lg rounded-lg p-4 border-gray-400 border overflow-y-auto scrollable-container">
+      <div className="w-full bg-background shadow-lg rounded-lg p-4 border-gray-400 border overflow-y-auto scrollable-container">
         {/* Header */}
         <div className="relative flex justify-between items-center pb-4 border-b border-gray-200">
           <h2 className="absolute left-1/2 transform -translate-x-1/2 text-lg font-semibold text-gray-700">
@@ -66,7 +66,7 @@ const CommentSection = () => {
         </div>
 
         {/* Comment Input */}
-        <div className="flex items-center mt-4 py-2 border rounded-xl bg-[#f9eae7] border-main/50">
+        <div className="flex items-center mt-4 py-2 border rounded-xl bg-SoftMain border-main/50">
           <input
             type="text"
             placeholder="Enter your comment"
