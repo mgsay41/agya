@@ -37,7 +37,7 @@ const LatestActivities = () => {
             <div key={index} className="flex items-center gap-2">
               <Bookmark className="h-4 w-4" style={{ color: "#8B1D1D" }} />
               <button
-                className="text-sm text-gray-800 hover:underline"
+                className="text-xs text-gray-800 hover:underline"
                 onClick={() => {
                   // Add your navigation logic here if needed
                 }}

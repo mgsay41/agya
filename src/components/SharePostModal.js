@@ -1,7 +1,13 @@
 import React from "react";
-import { X } from "lucide-react"; // Install "lucide-react" for icons: npm install lucide-react
+import { X, Clipboard } from "lucide-react"; // Ensure lucide-react is installed: npm install lucide-react
 
 const SharePostModal = ({ onClose }) => {
+  const handleCopyLink = () => {
+    const link = "https://www.climate_heritage.com/pin/9148005520137503/";
+    navigator.clipboard.writeText(link);
+    alert("Link copied to clipboard!");
+  };
+
   return (
     <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
       <div className="relative w-[90%] max-w-md rounded-2xl bg-white p-6 text-center shadow-lg border-2 border-[#D9B6AA]">
@@ -17,7 +23,7 @@ const SharePostModal = ({ onClose }) => {
         <h2 className="text-lg font-bold mb-4">Share this Post</h2>
 
         {/* Social Icons */}
-        <div className="flex items-center justify-center gap-6">
+        <div className="flex items-center justify-center gap-6 mb-6">
           {/* Facebook */}
           <a
             href="#"
@@ -42,6 +48,23 @@ const SharePostModal = ({ onClose }) => {
           >
             <img src="/x-icon.png" alt="X" className="w-6 h-6" />
           </a>
+        </div>
+
+        {/* Copy Link Section */}
+        <div className="flex items-center gap-2 rounded-lg border border-gray-300">
+          <input
+            type="text"
+            value="https://www.climate_heritage.com/pin/9148005520137503/"
+            readOnly
+            className="flex-1 px-2 py-1 bg-transparent text-sm text-center text-gray-700 focus:outline-none"
+          />
+          <button
+            onClick={handleCopyLink}
+            className="p-2 rounded-md hover:bg-gray-200 transition"
+            aria-label="Copy Link"
+          >
+            <Clipboard size={18} className="text-gray-600" />
+          </button>
         </div>
       </div>
     </div>

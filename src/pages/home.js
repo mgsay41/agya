@@ -1,10 +1,11 @@
 import React from "react";
-import SocialCard from "../components/SocialCard";
 import FeaturedArticles from "../components/FeaturedArticles";
+import CommentSection from "../components/CommentSection";
 function home() {
   return (
-    <div>
+    <div className="w-fit">
       <FeaturedArticles />
+      <CommentSection />
     </div>
   );
 }

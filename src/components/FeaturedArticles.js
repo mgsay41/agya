@@ -21,17 +21,15 @@ const FeaturedArticles = () => {
 
   return (
     <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-8">
-      <h1 className="mb-12 text-center text-lg font-bold text-black">
-        Featured Articles
-      </h1>
+      <h1 className="mb-7 text-left text-lg text-black">Featured Articles</h1>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
         {articles.map((article, index) => (
           <div
             key={index}
-            className="group overflow-hidden rounded-lg border border-[#6E2617] bg-white shadow transition-transform hover:-translate-y-1 flex flex-col"
+            className="group overflow-hidden rounded-lg border border-main bg-white shadow transition-transform hover:-translate-y-1 flex flex-col"
           >
-            <div className="aspect-[4/3] overflow-hidden">
+            <div className="overflow-hidden">
               <img
                 src={article.image}
                 alt={article.title}
@@ -39,11 +37,11 @@ const FeaturedArticles = () => {
               />
             </div>
 
-            <div className="pt-1 pb-4 px-4 flex-grow flex flex-col justify-between text-center">
-              <h2 className="mb-4 text-lg sm:text-sm font-bold leading-tight text-gray-900">
+            <div className="pt-2 px-4 flex-grow flex flex-col justify-between text-center">
+              <h2 className="mb-1 text-xs font-bold leading-tight text-gray-900">
                 "{article.title}"
               </h2>
-              <p className="mt-auto text-gray-500 text-sm">{article.author}</p>
+              <p className="text-gray-500 text-xs">{article.author}</p>
             </div>
           </div>
         ))}
