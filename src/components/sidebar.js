@@ -12,7 +12,7 @@ import {
 
 const Sidebar = () => {
   return (
-    <div className="flex flex-col w-64 text-main-font rounded-lg border border-gray-300 bg-white shadow">
+    <div className="flex flex-col max-h-fit w-64 text-main-font rounded-lg border border-gray-300 bg-white shadow">
       {/* Profile Section */}
       <div className="flex flex-col items-center py-8">
         {/* Profile Image */}

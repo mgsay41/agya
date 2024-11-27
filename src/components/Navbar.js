@@ -17,7 +17,7 @@ const Navbar = () => {
   };
 
   return (
-    <header className="w-full px-4 py-3">
+    <header className="w-full py-3">
       <div className="max-w-[1440px] mx-auto flex items-center justify-between gap-4">
         {/* Logo */}
         <a href="/" className="flex-shrink-0">
