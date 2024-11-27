@@ -4,6 +4,7 @@ import UserProfile from "./pages/UserProfile";
 import ChangePhotoComponent from "./components/ChangePhotoComponent";
 import CommentSection from "./components/CommentSection";
 import EditProfile from "./pages/EditProfile";
+import CookieConsent from "./components/CookieConsent";
 
 const App = () => {
   return (
@@ -13,6 +14,7 @@ const App = () => {
       <ChangePhotoComponent />
       <CommentSection />
       <EditProfile />
+      <CookieConsent />
     </div>
   );
 };
