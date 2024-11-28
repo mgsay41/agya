@@ -6,7 +6,7 @@ module.exports = {
       colors: {
         main: "#31511E", // Main Color
         background: "#fefdfc", // Background Color
-        secondary: "#001F34", // Secondary Color
+        secondary: "#e6e6d7", // Secondary Color
         SoftMain: "#f9eae7", // Soft Main Color
         accent: "#001F34", // Accent Color
         DateTime: "#777777",
