@@ -12,6 +12,7 @@ import EditActivity from "./pages/editActivity";
 import Front from "./pages/Front";
 import UserProfile from "./pages/UserProfile";
 import EditProfile from "./pages/EditProfile";
+import ArticleDetails from "./pages/ArticlesDetails";
 
 // Components
 import ChangePhotoComponent from "./components/ChangePhotoComponent";
@@ -44,6 +45,7 @@ const App = () => {
       <CommentSection />
       <EditProfile />
       <CookieConsent />
+      <ArticleDetails />
     </>
   );
 };
