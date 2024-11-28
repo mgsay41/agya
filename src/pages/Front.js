@@ -21,6 +21,7 @@ function Front() {
               <Route path="/" element={<Home />} />
               <Route path="/about" element={<h1 className="text-xl p-8">About Page</h1>} />
               <Route path="/activities" element={<h1 className="text-xl p-8">Activities Page</h1>} />
+              <Route path="/article" element={<h1 className="text-xl p-8">Articles Page</h1>} />
               <Route path="/gallery" element={<h1 className="text-xl p-8">Gallery Page</h1>} />
               <Route path="/help" element={<HelpSection />} />
               <Route path="/profile" element={<UserProfile />} />

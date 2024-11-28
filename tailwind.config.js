@@ -19,6 +19,7 @@ module.exports = {
         sans: ["Arial", "sans-serif"], // Default Sans Font
         serif: ["Georgia", "serif"], // Default Serif Font
       },
+      
     },
   },
   plugins: [require("tailwind-scrollbar")],
