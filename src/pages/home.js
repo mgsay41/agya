@@ -7,7 +7,7 @@ function home() {
       <FeaturedArticles />
       <CommentSection />
     </div>
-  );
+  )
 }
 
 export default home;
