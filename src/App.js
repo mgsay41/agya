@@ -11,6 +11,7 @@ import Activities from "./pages/Activites";
 import ActivityDetails from "./pages/activityDetails";
 import EditActivity from "./pages/editActivity";
 import Front from "./pages/Front";
+import Gallery from "./pages/Gallery";
 import UserProfile from "./pages/UserProfile";
 import EditProfile from "./pages/EditProfile";
 import ArticleDetails from "./pages/ArticlesDetails";
@@ -24,7 +25,7 @@ import Sidebar from "./components/sidebar";
 const App = () => {
   return (
     <div>
-     <Activities/>
+      <Front /> 
     </div>
     // <>
     //   <Routes>
@@ -53,7 +54,7 @@ const App = () => {
     //   <CommentSection />
     //   <EditProfile />
     //   <CookieConsent />
-    //   <ArticleDetails /> 
+    //   <ArticleDetails />
     // </>
   );
 };

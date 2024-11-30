@@ -1,21 +1,22 @@
-import React, { useState } from "react"; 
+import React, { useState } from "react";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import { IoIosSearch } from "react-icons/io";
 
 const FilterSidebar = () => {
   const [startDate, setStartDate] = useState(new Date());
+  const [endDate, setEndDate] = useState(new Date()); // Added endDate state
   const [selectedEventType, setSelectedEventType] = useState({
     online: false,
     offline: false,
-    all: false
+    all: false,
   });
   const [selectedLocation, setSelectedLocation] = useState([]);
-  const [days, setDays] = useState(0);  // State for number of days
+  const [days, setDays] = useState(0); // State for number of days
   const [price, setPrice] = useState({
     free: false,
     paid: false,
-    all: false
+    all: false,
   });
   const [rangeValue, setRangeValue] = useState(0); // Range slider value
 
@@ -29,9 +30,9 @@ const FilterSidebar = () => {
 
   // Handle location checkbox changes
   const handleLocationChange = (country) => {
-    setSelectedLocation((prev) => 
-      prev.includes(country) 
-        ? prev.filter(item => item !== country) 
+    setSelectedLocation((prev) =>
+      prev.includes(country)
+        ? prev.filter((item) => item !== country)
         : [...prev, country]
     );
   };
@@ -53,18 +54,18 @@ const FilterSidebar = () => {
   // Clear filters function
   const clearFilters = () => {
     setStartDate(new Date());
-    setEndDate(new Date());
+    setEndDate(new Date()); // Reset endDate
     setSelectedEventType({
       online: false,
       offline: false,
-      all: false
+      all: false,
     });
     setSelectedLocation([]);
     setDays(0);
     setPrice({
       free: false,
       paid: false,
-      all: false
+      all: false,
     });
     setRangeValue(0); // Reset the range slider
   };
@@ -86,17 +87,16 @@ const FilterSidebar = () => {
       </div>
 
       {/* Date Range Section */}
-            <div className="mb-4">
+      <div className="mb-4">
         <label className="block text-sm font-medium mb-2">Date Range</label>
         <div className="flex items-center gap-2">
           <span>Coming in</span>
           <input
-           // type="number"
+            type="number"
             min="0"
             value={days}
             onChange={(e) => setDays(e.target.value)}
-            className="w-16 border rounded-lg p-2 text-center bg-[#E9ECE7] "  // Added appearance-none
-           // placeholder="0"
+            className="w-16 border rounded-lg p-2 text-center bg-[#E9ECE7]"
           />
           <span>Days</span>
         </div>
@@ -109,7 +109,6 @@ const FilterSidebar = () => {
           className="w-full mt-2 bg-main"
         />
       </div>
-
 
       {/* Virtual Event Section */}
       <div className="mb-4">
@@ -152,13 +151,12 @@ const FilterSidebar = () => {
       <div className="mb-4">
         <label className="block text-sm font-medium mb-2">Location</label>
         <div className="flex items-center border rounded-lg">
-        <IoIosSearch className="text-gray-400 mx-2" />
-        <input
-        
-          type="text"
-          placeholder="Search for a country"
-          className="w-full border rounded-lg p-2"
-        />
+          <IoIosSearch className="text-gray-400 mx-2" />
+          <input
+            type="text"
+            placeholder="Search for a country"
+            className="w-full border rounded-lg p-2"
+          />
         </div>
         <div className="mt-2 space-y-1">
           {["Egypt", "Germany", "USA", "UK", "UAE"].map((country) => (
