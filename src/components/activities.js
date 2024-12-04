@@ -1,8 +1,8 @@
 import React from "react";
-import image1 from "../images/image.png"
 import { MdOutlinePersonOutline } from "react-icons/md";
 import { GrLanguage } from "react-icons/gr";
 import { HiOutlineTicket } from "react-icons/hi2";
+import FilterSidebar from "../components/filterActivites";
 // Reusable Activity Card Component
 
 const ActivityCard = ({ title, date, location, price, applicants, image }) => (
@@ -37,7 +37,7 @@ const ActivityCard = ({ title, date, location, price, applicants, image }) => (
 
 // Categories Filter Buttons
 const Categories = () => (
-  <div className="flex flex-wrap gap-2 mb-4">
+  <div className="flex flex-wrap gap-1 mb-4">
     {[
       "All Activities",
       "Workshops",
@@ -49,7 +49,7 @@ const Categories = () => (
     ].map((category, index) => (
       <button
         key={index}
-        className="bg-main text-white text-sm px-6 py-2 rounded-[10px] hover:bg-opacity-90 transition"
+        className="bg-main text-white text-sm px-4 mb-2 py-2 rounded-[10px] hover:bg-opacity-90 transition"
       >
         {category}
       </button>
@@ -67,7 +67,7 @@ const Activity = () => {
       location: "The Getty Conservation Institute (Los Angeles, USA)",
       price: "Free",
       applicants: 30,
-      image: image1, // Replace with actual image URL
+      image: "/activityDetails.png", // Replace with actual image URL
     },
     {
       id: 2,
@@ -81,10 +81,12 @@ const Activity = () => {
   ];
 
   return (
-    <div className="flex flex-col px-8 py-4">
+    <div className=" flex">
+        <div className="flex flex-col px-8">
+          <h3 className=" text-3xl text-center font-bold mb-10">Activities</h3>
       {/* Latest Activities Section */}
-      <h2 className="text-xl font-semibold mb-4">Latest Activities</h2>
-      <div className="grid grid-cols-3 gap-4">
+      <h2 className="text-xl font-semibold mt-8 mb-4">Latest Activities</h2>
+      <div className="mt-6 grid grid-cols-2 gap-4">
         {activitiesData.map((activity) => (
           <ActivityCard key={activity.id} {...activity} />
         ))}
@@ -98,6 +100,8 @@ const Activity = () => {
           <ActivityCard key={activity.id} {...activity} />
         ))}
       </div>
+    </div>
+            <FilterSidebar />{/* Sidebar on the right */}
     </div>
   );
 };

@@ -10,8 +10,11 @@ import {
   Globe,
 } from "lucide-react";
 import SocialCard from "../components/SocialCard";
+import { Link ,useNavigate } from "react-router-dom";
+
 
 const UserProfile = () => {
+  const navigate = useNavigate();
   // Example activities data with isFree and appliedNumber
   const activities = [
     {
@@ -56,7 +59,7 @@ const UserProfile = () => {
             <span className="text-3xl text-gray-500">S</span>
           </div>
           <button className="absolute top-0 right-0 w-6 h-6 bg-main text-white rounded-full flex items-center justify-center">
-            <Edit3 size={14} />
+            <Link to={"/edit-profile"} ><Edit3 size={14}  /></Link>
           </button>
         </div>
 
@@ -85,11 +88,12 @@ const UserProfile = () => {
       {/* Scrollable Activity Cards */}
       <div className="relative">
         {/* Cards Container */}
-        <div className="flex gap-4 overflow-x-auto p-4 w-full">
+        <div className="flex cursor-pointer gap-4 overflow-x-auto p-4 w-full">
           {activities.map((activity, index) => (
             <div
               key={index}
               className="w-64 bg-white border rounded-xl overflow-hidden shadow-md"
+              onClick={ ()=> navigate(`/activity/${activity.title}`)}
             >
               {/* Background Image */}
               <div className="relative">
@@ -101,7 +105,7 @@ const UserProfile = () => {
                 {/* Status Label */}
                 {activity.status && (
                   <div
-                    className={`absolute top-12 left-12 p-4 text-sm flex items-center gap-2 font-medium text-white rounded-lg bg-white`}
+                    className={` absolute top-12 ${activity.status === "Rejected by Admin" ?  "left-4": " left-14"} p-4 text-sm flex justify-center items-center gap-2 font-medium text-white rounded-lg bg-white`}
                   >
                     {activity.status === "Rejected by Admin" ? (
                       <FileX2 className="w-5 h-5 text-red-600" />

@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom"; // Import Link for navigation
+import { useLocation } from 'react-router-dom';
 import {
   Home,
   Info,
@@ -11,6 +12,7 @@ import {
 } from "lucide-react";
 
 const Sidebar = () => {
+  let location = useLocation();
   return (
     <div className="flex flex-col max-h-fit w-64 text-main-font rounded-lg border border-gray-300 bg-white shadow">
       {/* Profile Section */}
@@ -37,45 +39,45 @@ const Sidebar = () => {
             className="flex items-center text-sm font-medium hover:text-main w-40"
           >
             <span className="w-12 inline-flex justify-end">
-              <Home className="w-5 h-5" />
+              <Home className={`w-5 h-5 ${location.pathname === "/" ? "text-main" : ""}`} />
             </span>
-            <span className="ml-4">Home</span>
+            <span className={`ml-4 ${location.pathname === "/" ? "text-main" : ""} `}>Home</span>
           </Link>
           <Link
             to="/about"
             className="flex items-center text-sm font-medium hover:text-main w-40"
           >
             <span className="w-12 inline-flex justify-end">
-              <Info className="w-5 h-5" />
+              <Info className={`w-5 h-5 ${location.pathname === "/about" ? "text-main" : ""}`}/>
             </span>
-            <span className="ml-4">About</span>
+            <span className={`ml-4 ${location.pathname === "/about" ? "text-main" : ""} `}>About</span>
           </Link>
           <Link
             to="/activities"
             className="flex items-center text-sm font-medium hover:text-main w-40"
           >
             <span className="w-12 inline-flex justify-end">
-              <Calendar className="w-5 h-5" />
+              <Calendar className={`w-5 h-5 ${location.pathname === "/activities" ? "text-main" : ""}`}/>
             </span>
-            <span className="ml-4">Activities</span>
+            <span className={`ml-4 ${location.pathname === "/activities" ? "text-main" : ""} `}>Activities</span>
           </Link>
           <Link
             to="/gallery"
             className="flex items-center text-sm font-medium hover:text-main w-40"
           >
             <span className="w-12 inline-flex justify-end">
-              <Image className="w-5 h-5" />
+              <Image className={`w-5 h-5 ${location.pathname === "/gallery" ? "text-main" : ""}`}/>
             </span>
-            <span className="ml-4">Gallery</span>
+            <span className={`ml-4 ${location.pathname === "/gallery" ? "text-main" : ""} `}>Gallery</span>
           </Link>
           <Link
             to="/help"
             className="flex items-center text-sm font-medium hover:text-main w-40"
           >
             <span className="w-12 inline-flex justify-end">
-              <HelpCircle className="w-5 h-5" />
+              <HelpCircle className={`w-5 h-5 ${location.pathname === "/help" ? "text-main" : ""}`}/>
             </span>
-            <span className="ml-4">Help</span>
+            <span className={`ml-4 ${location.pathname === "/help" ? "text-main" : ""} `}>Help</span>
           </Link>
 
           {/* Profile Button */}
@@ -84,9 +86,9 @@ const Sidebar = () => {
             className="flex items-center text-sm font-medium hover:text-main w-40"
           >
             <span className="w-12 inline-flex justify-end">
-              <User className="w-5 h-5" />
+              <User className={`w-5 h-5 ${location.pathname === "/profile" ? "text-main" : ""}`}/>
             </span>
-            <span className="ml-4">Profile</span>
+            <span className={`ml-4 ${location.pathname === "/profile" ? "text-main" : ""} `}>Profile</span>
           </Link>
         </div>
 

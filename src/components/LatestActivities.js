@@ -26,9 +26,9 @@ const LatestActivities = () => {
   ];
 
   return (
-    <div className="w-64 rounded-lg border border-gray-200 bg-white shadow">
-      <div className="p-6">
-        <h2 className="mb-4 text-xl font-semibold text-gray-900">
+    <div className="w-64 max-h-fit rounded-lg border border-gray-200 bg-white shadow">
+      <div className="py-5 px-4">
+        <h2 className="mb-4 text-base font-semibold text-gray-900">
           Latest Activities
         </h2>
 
@@ -37,7 +37,7 @@ const LatestActivities = () => {
             <div key={index} className="flex items-center gap-2">
               <Bookmark className="h-4 w-4" style={{ color: "#8B1D1D" }} />
               <button
-                className="text-xs text-gray-800 hover:underline"
+                className="text-[11px] underline text-main hover:underline"
                 onClick={() => {
                   // Add your navigation logic here if needed
                 }}
@@ -48,7 +48,7 @@ const LatestActivities = () => {
           ))}
 
           <div className="pt-2 text-center">
-            <button className="text-sm text-gray-600 hover:underline underline">
+            <button className="text-sm text-main hover:underline underline">
               See All
             </button>
           </div>

@@ -71,7 +71,7 @@ const FilterSidebar = () => {
   };
 
   return (
-    <div className="w-72 bg-white border rounded-lg p-4 shadow-md relative mt-4">
+    <div className="w-52 bg-white border rounded-lg p-4 shadow-md relative mt-4">
       <h2 className="text-lg font-semibold mb-4">Narrow down your search</h2>
 
       {/* Calendar Section */}
@@ -90,7 +90,7 @@ const FilterSidebar = () => {
       <div className="mb-4">
         <label className="block text-sm font-medium mb-2">Date Range</label>
         <div className="flex items-center gap-2">
-          <span>Coming in</span>
+          <span className=" text-xs">Coming in</span>
           <input
             type="number"
             min="0"
@@ -98,7 +98,7 @@ const FilterSidebar = () => {
             onChange={(e) => setDays(e.target.value)}
             className="w-16 border rounded-lg p-2 text-center bg-[#E9ECE7]"
           />
-          <span>Days</span>
+          <span className=" text-sm">Days</span>
         </div>
         <input
           type="range"
@@ -106,7 +106,7 @@ const FilterSidebar = () => {
           max="100"
           value={rangeValue}
           onChange={handleRangeChange}
-          className="w-full mt-2 bg-main"
+          className="w-full mt-2 bg-main "
         />
       </div>
 
@@ -120,7 +120,7 @@ const FilterSidebar = () => {
               name="online"
               checked={selectedEventType.online}
               onChange={handleEventChange}
-              className="border rounded"
+              className="border rounded accent-main"
             />
             Online
           </label>
@@ -130,7 +130,7 @@ const FilterSidebar = () => {
               name="offline"
               checked={selectedEventType.offline}
               onChange={handleEventChange}
-              className="border rounded"
+              className="border rounded accent-main"
             />
             Offline
           </label>
@@ -140,7 +140,7 @@ const FilterSidebar = () => {
               name="all"
               checked={selectedEventType.all}
               onChange={handleEventChange}
-              className="border rounded"
+              className="border rounded accent-main"
             />
             All
           </label>
@@ -155,7 +155,7 @@ const FilterSidebar = () => {
           <input
             type="text"
             placeholder="Search for a country"
-            className="w-full border rounded-lg p-2"
+            className="w-full border rounded-lg p-2 text-xs"
           />
         </div>
         <div className="mt-2 space-y-1">
@@ -165,7 +165,7 @@ const FilterSidebar = () => {
                 type="checkbox"
                 checked={selectedLocation.includes(country)}
                 onChange={() => handleLocationChange(country)}
-                className="border rounded"
+                className="border rounded accent-main"
               />
               {country}
             </label>
@@ -183,7 +183,7 @@ const FilterSidebar = () => {
               name="free"
               checked={price.free}
               onChange={handlePriceChange}
-              className="border rounded"
+              className="border rounded accent-main"
             />
             Free
           </label>
@@ -193,7 +193,7 @@ const FilterSidebar = () => {
               name="paid"
               checked={price.paid}
               onChange={handlePriceChange}
-              className="border rounded"
+              className="border rounded accent-main"
             />
             Paid
           </label>
@@ -203,7 +203,7 @@ const FilterSidebar = () => {
               name="all"
               checked={price.all}
               onChange={handlePriceChange}
-              className="border rounded"
+              className="border rounded accent-main"
             />
             All
           </label>
@@ -214,11 +214,11 @@ const FilterSidebar = () => {
       <div className="flex items-center justify-between">
         <button
           onClick={clearFilters}
-          className="text-sm text-green-600 underline"
+          className="text-sm text-main underline"
         >
           Clear Filter
         </button>
-        <button className="bg-green-600 text-white px-4 py-2 rounded-lg">
+        <button className="bg-main text-white px-4 py-2 rounded-lg">
           Apply
         </button>
       </div>

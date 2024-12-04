@@ -2,6 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
+
 body {
   @apply bg-background text-main-font font-sans;
 }
@@ -9,6 +10,15 @@ body {
 /* Custom scrollbar styles */
 .scrollable-container::-webkit-scrollbar {
   width: 10px; /* Width of the scrollbar */
+}
+
+input::file-selector-button {
+  background-color: #6E2617;
+  border: 0;
+  color: white;
+  padding: 8px 15px;
+  border-radius: 10px;
+  cursor: pointer;
 }
 
 .scrollable-container::-webkit-scrollbar-track {
@@ -28,4 +38,16 @@ body {
 .scrollable-container {
   scrollbar-width: thin; /* Firefox support */
   scrollbar-color: #6e2617 #fefdfc; /* Thumb and track color for Firefox */
+}
+input, optgroup, select {
+  background-color: #e6e6d7;
+}
+
+.p-datepicker {
+  min-width: 332px !important;
+}
+
+.add-activity .ql-toolbar.ql-snow {
+  display: flex !important;
+    justify-content: center;
 }

@@ -8,7 +8,7 @@ import {
 } from "lucide-react";
 import SharePostModal from "./SharePostModal";
 
-const SocialCard = () => {
+const SocialCard = ({onClick}) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const handleShareClick = () => {
@@ -20,9 +20,9 @@ const SocialCard = () => {
   };
 
   return (
-    <div className="max-w-xl w-full rounded-3xl overflow-hidden shadow-md bg-SoftMain border border-main/50">
+    <div  className="max-w-xl w-full rounded-3xl overflow-hidden shadow-md bg-SoftMain border border-main/50">
       {/* Header */}
-      <div className="flex flex-row items-center p-4 pb-2">
+      <div onClick={onClick} className="flex flex-row items-center cursor-pointer p-4 pb-2">
         <div className="flex items-center flex-1">
           <div className="h-12 w-12 mr-3 rounded-full overflow-hidden">
             <img
@@ -39,7 +39,7 @@ const SocialCard = () => {
       </div>
 
       {/* Content */}
-      <div className="px-4 pt-0">
+      <div onClick={onClick} className=" cursor-pointer px-4 pt-0">
         <p className="text-lg font-semibold mb-2">
           "Major Paleolithic Site Excavated in Central Asia"
         </p>

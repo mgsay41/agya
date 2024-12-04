@@ -1,7 +1,7 @@
 import React from 'react';
 import { ChevronDown } from 'lucide-react';
 
-const HelpSection = () => {
+const Help = () => {
   const faqs = [
     "What is this platform about?",
     "How can I contribute to the platform?",
@@ -77,4 +77,4 @@ const HelpSection = () => {
   );
 };
 
-export default HelpSection;
+export default Help;

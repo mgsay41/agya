@@ -2,7 +2,7 @@ import React from "react";
 
 const BlurredCard = () => {
   return (
-    <div className="relative w-[80%] max-w-xl h-64 overflow-hidden rounded-lg mx-auto">
+    <div className="relative w-[100%] max-w-xl h-64 overflow-hidden rounded-lg mx-auto">
       {/* Background Image with Grayscale and Blur */}
       <div
         className="absolute inset-0 bg-cover bg-center filter grayscale blur-sm"
