@@ -29,3 +29,14 @@ body {
   scrollbar-width: thin; /* Firefox support */
   scrollbar-color: #6e2617 #fefdfc; /* Thumb and track color for Firefox */
 }
+.ql-toolbar.ql-snow {
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  font-family: 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+  padding: 8px 16px 8px 8px; /* Add more padding-right */
+  
+  /* Center the element horizontally */
+  margin-left: auto;
+  margin-right: auto;
+  width: fit-content;
+}

@@ -6,7 +6,7 @@ import Activity from "../components/activities";
 
 function Activities() {
   return (
-    <div className="w-full px-[150px]"> {/* Full-width container */}
+    <div className="w-full px-36"> {/* Full-width container */}
       <Navbar />
       <div className="flex flex-row gap-4"> {/* Flex container with row direction */}
         <Sidebar /> {/* FilterSidebar on the left */}

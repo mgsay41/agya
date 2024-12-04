@@ -14,17 +14,18 @@ import Front from "./pages/Front";
 import UserProfile from "./pages/UserProfile";
 import EditProfile from "./pages/EditProfile";
 import ArticleDetails from "./pages/ArticlesDetails";
-
+import HelpSection from "./pages/Help";
 // Components
 import ChangePhotoComponent from "./components/ChangePhotoComponent";
 import CommentSection from "./components/CommentSection";
 import CookieConsent from "./components/CookieConsent";
 import Sidebar from "./components/sidebar";
-
+import MyComponent from "./components/richText";
+import EditorWithTranslate from "./components/test";
 const App = () => {
   return (
     <div>
-     <Activities/>
+   <EditorWithTranslate/>
     </div>
     // <>
     //   <Routes>
@@ -42,18 +43,21 @@ const App = () => {
     //     {/* article secrion routes*/}
     //     <Route path="/article" element={<ArticleDetails />} />
 
+    //     {/* article secrion routes*/}
+    //     <Route path="/help" element={<HelpSection />} />
+
     //     {/* Fallback route */}
     //     <Route path="*" element={<Navigate to={"/"} />} />
     //   </Routes>
 
-    // {/* Additional components to render */}
-    //   <Front />
-    //   <UserProfile />
-    //   <ChangePhotoComponent />
-    //   <CommentSection />
-    //   <EditProfile />
-    //   <CookieConsent />
-    //   <ArticleDetails /> 
+     /* Additional components to render
+       <Front />
+       <UserProfile />
+       <ChangePhotoComponent />
+       <CommentSection />
+       <EditProfile />
+       <CookieConsent />
+       <ArticleDetails />  */
     // </>
   );
 };

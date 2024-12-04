@@ -11,7 +11,7 @@ const ActivityCard = ({ title, date, location, price, applicants, image }) => (
       <img
         src={image}
         alt={title}
-        className="w-full h-40 object-cover"
+        className="w-full h-1/3 object-cover"
       />
     </div>
     <div className="p-4">
@@ -84,16 +84,15 @@ const Activity = () => {
     <div className="flex flex-col px-8 py-4">
       {/* Latest Activities Section */}
       <h2 className="text-xl font-semibold mb-4">Latest Activities</h2>
-      <div className="grid grid-cols-3 gap-4">
+      <div className="grid grid-cols-2 gap-4">
         {activitiesData.map((activity) => (
           <ActivityCard key={activity.id} {...activity} />
         ))}
       </div>
-
       {/* All Activities Section */}
       <h2 className="text-xl font-semibold mt-8 mb-4">All Activities</h2>
       <Categories />
-      <div className="mt-6 grid grid-cols-2 gap-4">
+      <div className={`mt-6 grid grid-rows-${'2'} gap-4 rows-span-2`}>
         {activitiesData.map((activity) => (
           <ActivityCard key={activity.id} {...activity} />
         ))}

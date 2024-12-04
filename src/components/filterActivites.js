@@ -1,4 +1,4 @@
-import React, { useState } from "react"; 
+import React, { useState } from "react";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import { IoIosSearch } from "react-icons/io";
@@ -29,9 +29,9 @@ const FilterSidebar = () => {
 
   // Handle location checkbox changes
   const handleLocationChange = (country) => {
-    setSelectedLocation((prev) => 
-      prev.includes(country) 
-        ? prev.filter(item => item !== country) 
+    setSelectedLocation((prev) =>
+      prev.includes(country)
+        ? prev.filter(item => item !== country)
         : [...prev, country]
     );
   };
@@ -86,17 +86,20 @@ const FilterSidebar = () => {
       </div>
 
       {/* Date Range Section */}
-            <div className="mb-4">
+      <div className="mb-4">
         <label className="block text-sm font-medium mb-2">Date Range</label>
         <div className="flex items-center gap-2">
           <span>Coming in</span>
           <input
-           // type="number"
+            // type="number"
             min="0"
             value={days}
-            onChange={(e) => setDays(e.target.value)}
+            onChange={(e) => {
+              if (isNaN(e.target.value)) return;
+              setDays(e.target.value)
+            }}
             className="w-16 border rounded-lg p-2 text-center bg-[#E9ECE7] "  // Added appearance-none
-           // placeholder="0"
+          // placeholder="0"
           />
           <span>Days</span>
         </div>
@@ -106,7 +109,7 @@ const FilterSidebar = () => {
           max="100"
           value={rangeValue}
           onChange={handleRangeChange}
-          className="w-full mt-2 bg-main"
+          className="w-full mt-2  accent-main focus:accent-main hover:accent-white-800 hover:bg-white"
         />
       </div>
 
@@ -131,7 +134,7 @@ const FilterSidebar = () => {
               name="offline"
               checked={selectedEventType.offline}
               onChange={handleEventChange}
-              className="border rounded"
+              className="border rounded "
             />
             Offline
           </label>
@@ -151,14 +154,14 @@ const FilterSidebar = () => {
       {/* Location Section */}
       <div className="mb-4">
         <label className="block text-sm font-medium mb-2">Location</label>
-        <div className="flex items-center border rounded-lg">
-        <IoIosSearch className="text-gray-400 mx-2" />
-        <input
-        
-          type="text"
-          placeholder="Search for a country"
-          className="w-full border rounded-lg p-2"
-        />
+        <div className="flex items-center border rounded-lg relative">
+          <IoIosSearch className="text-gray-400 absolute mx-2 border- left-0" />
+          <input
+
+            type="text"
+            placeholder="Search for a country"
+            className="w-full border rounded-lg p-2"
+          />
         </div>
         <div className="mt-2 space-y-1">
           {["Egypt", "Germany", "USA", "UK", "UAE"].map((country) => (
