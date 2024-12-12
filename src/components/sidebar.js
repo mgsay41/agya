@@ -1,6 +1,11 @@
-import React from "react";
+import React, { useState, useRef, useContext ,useEffect } from "react";
 import { Link } from "react-router-dom"; // Import Link for navigation
 import { useLocation } from 'react-router-dom';
+import { X } from "lucide-react";
+import { Toast } from "primereact/toast";
+
+import { GlobalContext } from "../context/GlobelContext";
+
 import {
   Home,
   Info,
@@ -12,6 +17,24 @@ import {
 } from "lucide-react";
 
 const Sidebar = () => {
+
+  const { setIsAuthUser, isAuthUser } = useContext(GlobalContext)
+
+    
+  useEffect(() => {
+    setIsAuthUser(JSON.parse(localStorage.getItem("userInfo")));
+  }, [setIsAuthUser]);
+
+  const logout = async (e) => {
+    fetch("http://localhost:4000/api/auth/logout", {
+      method: "POST",
+      credentials: "include",
+    }).then(() => {
+      localStorage.removeItem("userInfo");
+      setIsAuthUser(null);
+    });
+  };
+  const name = isAuthUser?.firstname
   let location = useLocation();
   return (
     <div className="flex flex-col max-h-fit w-64 text-main-font rounded-lg border border-gray-300 bg-white shadow">
@@ -24,7 +47,7 @@ const Sidebar = () => {
           className="w-20 h-20 rounded-full mb-4"
         />
         {/* Name */}
-        <h2 className="text-lg font-semibold">Salma Nofal</h2>
+        <h2 className="text-lg font-semibold">{name}</h2>
         {/* Description */}
         <p className="text-sm text-gray-500 text-center px-4">
           Ui/Ux Designer | Cs Graduate | Archaeology Enthusiast
@@ -93,15 +116,16 @@ const Sidebar = () => {
         </div>
 
         {/* Logout Button */}
-        <Link
-          to="/logout"
+        <div
+          
           className="flex items-center text-sm font-medium hover:text-main w-40 mx-auto mt-12"
+          onClick={logout}
         >
           <span className="w-12 inline-flex justify-end">
             <LogOut className="w-5 h-5" />
           </span>
           <span className="ml-4">Log out</span>
-        </Link>
+        </div>
       </nav>
 
       {/* Footer Section */}

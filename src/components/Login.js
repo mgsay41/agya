@@ -1,12 +1,10 @@
 import React from "react";
 import { X } from "lucide-react";
 
-const SignUp = () => {
+const Login = () => {
   return (
-    <>
-    
-    </>
+  <></>
   );
 };
 
-export default SignUp;
+export default Login;
